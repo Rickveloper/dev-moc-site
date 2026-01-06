@@ -1,3 +1,10 @@
+/* Reset / base */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 /* General styles */
 body {
     margin: 0;
@@ -56,12 +63,12 @@ main {
     padding: 2rem;
     border-radius: 8px;
     margin-bottom: 2rem;
+    gap: 1rem;
 }
 
 .hero-text {
     flex: 1;
     min-width: 250px;
-    padding-right: 1rem;
 }
 
 .hero-image {
@@ -71,6 +78,8 @@ main {
 
 .hero-image img {
     width: 100%;
+    height: auto;
+    display: block;
     border-radius: 8px;
 }
 
@@ -83,7 +92,6 @@ main {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    justify-content: space-between;
 }
 
 .feature {
@@ -99,6 +107,7 @@ main {
 .feature img {
     width: 100%;
     height: auto;
+    display: block;
     border-radius: 4px;
     margin-bottom: 0.5rem;
 }
@@ -111,13 +120,21 @@ main {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.about p {
+    margin-bottom: 1rem;
+}
+
 .about-image {
     margin-top: 1rem;
     text-align: center;
 }
 
 .about-image img {
-    max-width: 100%;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
     border-radius: 8px;
 }
 
@@ -142,10 +159,15 @@ main {
 
 .contact input,
 .contact textarea {
-    padding: 0.5rem;
+    padding: 0.6rem;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
+    font-family: inherit;
+}
+
+.contact textarea {
+    resize: vertical;
 }
 
 .contact button {
@@ -169,6 +191,10 @@ main {
 
 .map-placeholder img {
     width: 100%;
+    max-width: 700px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
     border-radius: 8px;
 }
 
@@ -181,4 +207,16 @@ footer {
     color: #fff;
     font-size: 0.9rem;
     border-top: 2px solid #26789a;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 }
